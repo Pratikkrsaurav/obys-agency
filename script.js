@@ -1,6 +1,7 @@
 
 
-var h5timer = document.querySelector("#line1-part1 h5")
+function loadingAnimation(){
+    var h5timer = document.querySelector("#line1-part1 h5")
 var grow = 0
 
 
@@ -48,3 +49,24 @@ tl.to("#loader",{
     delay: 0.2,
 }
 )
+tl.from("#nav",{
+    opacity: 0,
+})
+tl.from("#hero1 h1,#hero2 h1,#hero3 h2,#hero4 h1",{
+y: 120,
+stagger: 0.2
+})
+}
+function cursorAnimation(){
+    document.addEventListener("mousemove", (e)=>{
+   gsap.to("#crsr",{
+    left: e.x,
+    top: e.y,
+   })
+})
+
+Shery.makeMagnet("#nav-part2 h4");
+}
+loadingAnimation()
+cursorAnimation()
+
